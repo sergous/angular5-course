@@ -8,12 +8,10 @@ import { CartService } from '../cart.service';
   styleUrls: ['./cart.component.css']
 })
 export class CartComponent implements OnInit {
-  public products: Product[];
 
   constructor(public cartService: CartService) {}
 
   ngOnInit() {
-    this.products = this.cartService.getProducts();
   }
 
 }
