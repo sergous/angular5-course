@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Product } from '../product.model';
 import { ProductCategory } from '../product-category.enum';
+import { ProductsService } from '../products.service';
 
 @Component({
   selector: 'app-product-list',
@@ -10,13 +11,10 @@ import { ProductCategory } from '../product-category.enum';
 export class ProductListComponent implements OnInit {
   products: Product[];
 
-  constructor() { }
+  constructor(public productsService: ProductsService) { }
 
   ngOnInit() {
-    this.products = [
-      new Product("Book", "Bestseller of this summers", 20, ProductCategory.equivalents, true),
-      new Product("Apple", "Green but sweet", 1, ProductCategory.ingredients, true),
-    ];
+    this.products = this.productsService.getProducts();
   }
 
 }
