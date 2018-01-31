@@ -3,14 +3,10 @@ import { Product } from './product.model';
 
 @Injectable()
 export class CartService {
-  products: Product[];
-
-  constructor() {
-    this.products = [];
-  }
+  products: Product[] = [];
 
   addProduct(product: Product) {
-    this.products.push(product);
+    this.products = [...this.products, product];
     product.isAvailible = false;
     console.log('Added to Cart');
     return product;
