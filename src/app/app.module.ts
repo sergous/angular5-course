@@ -3,11 +3,11 @@ import { NgModule } from '@angular/core';
 
 
 import { AppComponent } from './app.component';
-import { ProductListComponent } from './product-list/product-list.component';
-import { ProductItemComponent } from './product-item/product-item.component';
-import { ProductsService } from './products.service';
-import { CartComponent } from './cart/cart.component';
-import { CartService } from './cart.service';
+import { ProductListComponent } from './components/product-list/product-list.component';
+import { ProductItemComponent } from './components/product-item/product-item.component';
+import { ProductsService } from './services/products.service';
+import { CartComponent } from './components/cart/cart.component';
+import { CartService } from './services/cart.service';
 
 
 @NgModule({
