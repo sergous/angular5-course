@@ -1,0 +1,10 @@
+<h2>{{product.name}}</h2>
+<p>{{product.description}}</p>
+<p>{{product.category}}</p>
+<p>{{product.price | currency}}</p>
+<p *ngIf="cartService.isProductInCart(product)">In cart:
+  {{cartService.getProductQuantity(product)}}</p>
+<input type="number" [(ngModel)]="quantity" />
+<button *ngIf="product.isAvailible" (click)="handleAdd(product)">Add to Cart</button>
+<p *ngIf="!product.isAvailible">Not availible</p>
+
