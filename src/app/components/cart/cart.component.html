@@ -1,4 +1,0 @@
-<div *ngIf="!cartService.isEmpty">
-  <h1>Cart</h1>
-  <app-product-item *ngFor="let product of cartService.getProducts()" [product]="product"></app-product-item>
-</div>

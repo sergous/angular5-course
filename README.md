@@ -25,3 +25,11 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+
+## Project notes
+### Task 1, item 12
+
+Additional custom functionality:
+1. ProductItem have 'In cart: #' with current quantity of this product in Cart if any.
+2. ProductItem have input box with quantity to add to Cart, by default value is 1.
