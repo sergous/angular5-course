@@ -1,16 +1,15 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 import { Product } from '../models/product.model';
-import { ProductCategory } from '../constants/product-category.enum';
+import { PRODUCTS_URL } from '../constants';
+import { Observable } from 'rxjs/Observable';
 
 @Injectable()
 export class ProductsService {
 
-  constructor() { }
+  constructor(public http: HttpClient) { }
 
   getProducts() {
-    return [
-      new Product("Book", "Bestseller of this summers", 20, ProductCategory.equivalents, true),
-      new Product("Apple", "Green but sweet", 1, ProductCategory.ingredients, true),
-    ];
+    return this.http.get(PRODUCTS_URL);
   }
 }
