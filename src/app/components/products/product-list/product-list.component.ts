@@ -10,10 +10,10 @@ import { ProductsService } from '../../../services/products.service';
 })
 export class ProductListComponent implements OnInit {
   products: Product[] = [];
-  queryName: string = '';
+  nameQuery: string = '';
   selectedType: string;
-  typeProp = ['itemType'];
-  nameProp = ['menuItem'];
+  typeProp: any[] = ['itemType'];
+  nameProp: any[] = ['menuItem'];
 
   constructor(
     public productsService: ProductsService,
