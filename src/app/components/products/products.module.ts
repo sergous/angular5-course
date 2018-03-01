@@ -8,6 +8,7 @@ import { ProductListComponent } from './product-list/product-list.component';
 import { ProductItemComponent } from './product-item/product-item.component';
 import { ProductsService } from '../../services/products.service';
 import { CartService } from '../../services/cart.service';
+import { UniquePipe } from '../../pipes';
 
 @NgModule({
   imports: [
@@ -19,6 +20,7 @@ import { CartService } from '../../services/cart.service';
   declarations: [
     ProductListComponent,
     ProductItemComponent,
+    UniquePipe,
   ],
   providers: [ProductsService, CartService],
   exports: [
