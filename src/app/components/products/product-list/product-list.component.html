@@ -1,1 +1,10 @@
-<app-product-item *ngFor="let product of products" [product]="product"></app-product-item>
+Query name: <input type='text' [(ngModel)]='nameQuery' /><br/>
+Select type:
+<select [(ngModel)]='selectedType'>
+    <option value=''>All</option>
+    <option *ngFor="let t of products | map: 'itemType'" [ngValue]='t'>{{t}}</option>
+</select>
+
+<app-product-item *ngFor="let product of products 
+    | filterBy: nameProp: nameQuery
+    | filterBy: typeProp: selectedType" [product]="product"></app-product-item>
