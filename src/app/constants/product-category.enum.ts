@@ -1,4 +1,5 @@
 export enum ProductCategory {
-  ingredients = 'ingredients',
-  equivalents = 'equivalents'
+  Grill = 'Grill',
+  Deli = 'Deli',
+  Pasta = 'Pasta',
 }
