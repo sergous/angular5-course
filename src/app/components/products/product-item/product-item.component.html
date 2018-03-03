@@ -3,6 +3,9 @@
 <p>{{product.price | currency}}</p>
 <p *ngIf="cartService.isProductInCart(product)">In cart:
   {{cartService.getProductQuantity(product)}}</p>
-<input type="number" [(ngModel)]="quantity" />
-<button (click)="handleAdd(product)">Add to Cart</button>
-
+<mat-form-field>
+  <input type="number" matInput placeholder="Quantity" [(ngModel)]='quantity'>
+  <button mat-button matSuffix mat-raised-button color="primary" aria-label="Add to Cart" (click)="handleAdd(product)">
+    <mat-icon>add</mat-icon> Add to Cart
+  </button>
+</mat-form-field>

@@ -1,10 +1,15 @@
-Query name: <input type='text' [(ngModel)]='nameQuery' /><br/>
-Select type:
-<select [(ngModel)]='selectedType'>
-    <option value=''>All</option>
-    <option *ngFor="let t of products | map: 'itemType' | unique" [ngValue]='t'>{{t}}</option>
-</select>
+<mat-form-field class="example-full-width">
+  <input matInput placeholder="Type product name" [(ngModel)]='nameQuery'>
+</mat-form-field><br />
+<mat-form-field>
+  <mat-select placeholder="Select product type" [(ngModel)]='selectedType'>
+    <mat-option value=''>All</mat-option>
+    <mat-option *ngFor="let p of products | map: 'itemType' | unique" [value]="p">
+      {{ p }}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
 
-<app-product-item *ngFor="let product of products 
+<app-product-item *ngFor="let product of products
     | filterBy: nameProp: nameQuery
     | filterBy: typeProp: selectedType" [product]="product"></app-product-item>
