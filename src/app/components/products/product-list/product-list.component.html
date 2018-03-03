@@ -9,7 +9,8 @@
     </mat-option>
   </mat-select>
 </mat-form-field>
-
-<app-product-item *ngFor="let product of products
-    | filterBy: nameProp: nameQuery
-    | filterBy: typeProp: selectedType" [product]="product"></app-product-item>
+<mat-list>
+  <app-product-item *ngFor="let product of products
+      | filterBy: nameProp: nameQuery
+      | filterBy: typeProp: selectedType" [product]="product"></app-product-item>
+</mat-list>

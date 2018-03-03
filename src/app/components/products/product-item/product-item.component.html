@@ -1,11 +1,12 @@
-<h2>{{product.menuItem}}</h2>
-<p>{{product.itemType}}</p>
-<p>{{product.price | currency}}</p>
-<p *ngIf="cartService.isProductInCart(product)">In cart:
-  {{cartService.getProductQuantity(product)}}</p>
-<mat-form-field>
+<mat-list-item>
+  <h2 mat-line>{{product.menuItem}}</h2>
+  <p mat-line> {{product.itemType}} </p>
+  <h3 mat-line>{{product.price | currency}}
+    <span *ngIf="cartService.isProductInCart(product)">In cart:
+        {{cartService.getProductQuantity(product)}}</span>
+  </h3>
   <input type="number" matInput placeholder="Quantity" [(ngModel)]='quantity'>
-  <button mat-button matSuffix mat-raised-button color="primary" aria-label="Add to Cart" (click)="handleAdd(product)">
-    <mat-icon>add</mat-icon> Add to Cart
+  <button mat-button matSuffix mat-raised-button mat-icon-button color="primary" aria-label="Add to Cart" (click)="handleAdd(product); quantity = 1">
+    <mat-icon>add</mat-icon>
   </button>
-</mat-form-field>
+</mat-list-item>

@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { MatButtonModule, MatSelectModule, MatFormFieldModule, MatInputModule, MatIconModule } from '@angular/material';
+import { MatButtonModule, MatSelectModule, MatFormFieldModule, MatInputModule, MatIconModule, MatListModule } from '@angular/material';
 import { CollectionPipesModule } from 'ng-pipes';
 
 import { ProductListComponent } from './product-list/product-list.component';
@@ -22,6 +22,7 @@ import { UniquePipe } from '../../pipes';
     MatFormFieldModule,
     MatInputModule,
     MatIconModule,
+    MatListModule,
   ],
   declarations: [
     ProductListComponent,
