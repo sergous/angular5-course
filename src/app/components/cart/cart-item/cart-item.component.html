@@ -2,4 +2,6 @@
 <p>{{product.itemType}}</p>
 <p>{{product.price | currency}}</p>
 <p>Quantity: {{item.quantity}}</p>
-<button (click)="handleRemove(item)">Remove from Cart</button>
+<button mat-button mat-raised-button color="warn" aria-label="Remove from Cart" (click)="handleRemove(item)">
+  <mat-icon>delete</mat-icon> Remove from Cart
+</button>
