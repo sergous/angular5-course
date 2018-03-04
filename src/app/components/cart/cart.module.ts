@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MatButtonModule, MatIconModule } from '@angular/material';
+import { MatButtonModule, MatIconModule, MatListModule } from '@angular/material';
 import { CartItemComponent } from './cart-item/cart-item.component';
 import { CartListComponent } from './cart-list/cart-list.component';
 import { CartService } from '../../services/cart.service';
@@ -10,6 +10,7 @@ import { CartService } from '../../services/cart.service';
     CommonModule,
     MatButtonModule,
     MatIconModule,
+    MatListModule,
   ],
   declarations: [
     CartListComponent,

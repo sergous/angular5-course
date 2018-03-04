@@ -1,7 +1,10 @@
-<h2>{{product.menuItem}}</h2>
-<p>{{product.itemType}}</p>
-<p>{{product.price | currency}}</p>
-<p>Quantity: {{item.quantity}}</p>
-<button mat-button mat-raised-button color="warn" aria-label="Remove from Cart" (click)="handleRemove(item)">
-  <mat-icon>delete</mat-icon> Remove from Cart
-</button>
+<mat-list-item>
+  <h2 mat-line>{{product.menuItem}}</h2>
+  <p mat-line> {{product.itemType}} </p>
+  <h3 mat-line>{{product.price | currency}}
+    <span>Quantity: {{item.quantity}}</span>
+  </h3>
+  <button mat-button mat-raised-button mat-icon-button color="warn" aria-label="Remove from Cart" (click)="handleRemove(item)">
+    <mat-icon>delete</mat-icon>
+  </button>
+</mat-list-item>
