@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatTabsModule, MatCardModule } from '@angular/material';
 import { NgPipesModule } from 'ng-pipes';
 
 
@@ -21,6 +22,8 @@ import { ProductsModule } from './components/products/products.module';
     ProductsModule,
     NgPipesModule,
     BrowserAnimationsModule,
+    MatTabsModule,
+    MatCardModule,
   ],
   providers: [ProductsService, CartService],
   bootstrap: [AppComponent]

@@ -1,4 +1,16 @@
-<h1>Caffe Menu</h1>
-<app-product-list></app-product-list>
-<app-cart-list><app-cart-list>
-
+<mat-card>
+  <mat-card-content>
+    <h2 class="example-h2">Caffe Menu</h2>
+    <mat-tab-group>
+      <mat-tab label="Products">
+        <app-product-list></app-product-list>
+      </mat-tab>
+      <mat-tab label="Cart">
+        <app-cart-list *ngIf="!cartService.isEmpty"></app-cart-list>
+        <div *ngIf="cartService.isEmpty">
+          Cart is empty. Please add products to cart.
+        </div>
+      </mat-tab>
+    </mat-tab-group>
+  </mat-card-content>
+</mat-card>
