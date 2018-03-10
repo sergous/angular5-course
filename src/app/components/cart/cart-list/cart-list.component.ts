@@ -6,15 +6,7 @@ import { CartService } from '../../../services/cart.service';
   templateUrl: './cart-list.component.html',
   styleUrls: ['./cart-list.component.css']
 })
-export class CartListComponent implements OnInit {
+export class CartListComponent {
 
   constructor(public cartService: CartService) {}
-
-  ngOnInit() {
-  }
-
-  onRemoveItem(item) {
-    this.cartService.removeItem(item);
-  }
-
 }

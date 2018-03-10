@@ -2,5 +2,5 @@
   <h1>Cart</h1>
   <h3>Total products: {{cartService.totalNumber}}</h3>
   <h3>Total price: {{cartService.totalPrice | currency}}</h3>
-  <app-cart-item *ngFor="let item of cartService.getItems()" [item]="item" (remove)="onRemoveItem($event)"></app-cart-item>
+  <app-cart-item *ngFor="let item of cartService.getItems()" [item]="item"></app-cart-item>
 </div>

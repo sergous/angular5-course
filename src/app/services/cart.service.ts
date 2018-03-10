@@ -24,6 +24,11 @@ export class CartService {
     console.log('Removed from Cart');
   }
 
+  setProductQuantity(product, quantity: number) {
+    const foundItem = this.searchOneItemByProduct(product);
+    foundItem.quantity = quantity;
+  }
+
   getItems() {
     return this.items;
   }

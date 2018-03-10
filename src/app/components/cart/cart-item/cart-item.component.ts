@@ -10,18 +10,23 @@ import { Product } from '../../../models/product.model';
 })
 export class CartItemComponent implements OnInit {
   @Input() item: CartItem;
-  @Output() remove: EventEmitter<CartItem> = new EventEmitter<CartItem>();
 
   product: Product;
+  quantity: number;
 
-  constructor() { }
+  constructor(public cartService: CartService) {}
 
   ngOnInit() {
     this.product = this.item.product;
+    this.quantity = this.item.quantity;
   }
 
   handleRemove(event: any) {
-    this.remove.emit(this.item);
+    this.cartService.removeItem(this.item);
+  }
+
+  handleChangeQuantity() {
+    this.cartService.setProductQuantity(this.product, this.quantity);
   }
 
 }

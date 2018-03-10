@@ -2,5 +2,5 @@
 <p>{{product.description}}</p>
 <p>{{product.category}}</p>
 <p>{{product.price | currency}}</p>
-<p>Quantity: {{item.quantity}}</p>
+<p>Quantity: <input type="number" (change)="handleChangeQuantity()" [(ngModel)]="quantity" /></p>
 <button (click)="handleRemove(item)">Remove from Cart</button>
