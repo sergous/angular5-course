@@ -12,12 +12,14 @@ import { ConfigOptionsService } from './services/config-options.service';
 import { GeneratorFactory, BUILD_ID } from './generator.factory';
 import { ConstantsService } from './services/constants.service';
 import { APP_NAME, APP_VERSION } from './constants';
+import { ZoomDirective } from './directives/zoom.directive';
 
 export const constantsService = new ConstantsService(APP_NAME, APP_VERSION);
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ZoomDirective
   ],
   imports: [
     BrowserModule,
