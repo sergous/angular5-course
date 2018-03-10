@@ -7,10 +7,10 @@ export class ProductsService {
 
   constructor() { }
 
-  getProducts() {
-    return [
+  async getProducts() {
+    return Promise.resolve([
       new Product("Book", "Bestseller of this summers", 20, ProductCategory.equivalents, true),
       new Product("Apple", "Green but sweet", 1, ProductCategory.ingredients, true),
-    ];
+    ]);
   }
 }
