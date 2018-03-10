@@ -1,5 +1,7 @@
 import { Product } from "./product.model";
 
+export type CartField = 'price' | 'quantity' | 'name';
+
 export class CartItem {
     constructor(
         public product: Product,

@@ -13,13 +13,15 @@ import { GeneratorFactory, BUILD_ID } from './generator.factory';
 import { ConstantsService } from './services/constants.service';
 import { APP_NAME, APP_VERSION } from './constants';
 import { ZoomDirective } from './directives/zoom.directive';
+import { OrderByPipe } from './pipes/order-by.pipe';
 
 export const constantsService = new ConstantsService(APP_NAME, APP_VERSION);
 
 @NgModule({
   declarations: [
     AppComponent,
-    ZoomDirective
+    ZoomDirective,
+    OrderByPipe
   ],
   imports: [
     BrowserModule,
@@ -31,6 +33,7 @@ export const constantsService = new ConstantsService(APP_NAME, APP_VERSION);
     CartService,
     LocalStorageService,
     ConfigOptionsService,
+    OrderByPipe,
     {provide: BUILD_ID, useFactory: GeneratorFactory(14)},
     { provide: ConstantsService, useValue: constantsService }
   ],
