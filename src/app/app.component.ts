@@ -1,9 +1,9 @@
-import { Component, Inject } from '@angular/core';
+import { Component, Inject, Optional, SkipSelf } from '@angular/core';
 import { ConstantsService } from './services/constants.service';
 import { APP_NAME, APP_VERSION } from './constants';
 import { BUILD_ID } from './generator.factory';
 
-const constantsService = new ConstantsService(APP_NAME, APP_VERSION);
+export const constantsService = new ConstantsService(APP_NAME, APP_VERSION);
 
 @Component({
   selector: 'app-root',
@@ -19,7 +19,7 @@ export class AppComponent {
   build: string;
 
   constructor(
-    public constantsService: ConstantsService,
+    @Optional() public constantsService: ConstantsService,
     @Inject(BUILD_ID) private buildId: string,
   ) {}
 
