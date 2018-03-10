@@ -9,6 +9,7 @@ import { CartModule } from './components/cart/cart.module';
 import { ProductsModule } from './components/products/products.module';
 import { LocalStorageService } from './services/local-storage.service';
 import { ConfigOptionsService } from './services/config-options.service';
+import { GeneratorFactory, BUILD_ID } from './generator.factory';
 
 
 @NgModule({
@@ -20,7 +21,13 @@ import { ConfigOptionsService } from './services/config-options.service';
     CartModule,
     ProductsModule
   ],
-  providers: [ProductsService, CartService, LocalStorageService, ConfigOptionsService],
+  providers: [
+    ProductsService,
+    CartService,
+    LocalStorageService,
+    ConfigOptionsService,
+    {provide: BUILD_ID, useFactory: GeneratorFactory(14)}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
