@@ -40,15 +40,30 @@ export class CartService {
     return this.items.reduce((acc, item) => acc + item.product.price * item.quantity, 0);
   }
 
-  searchItemsByProduct(product) {
-    return this.filterItems(CART_FILTER.PRODUCT_NAME_EQ(product));
+  isProductInCart(product: Product) {
+    const found = this.searchItemsByProduct(product);
+    return found.length > 0;
   }
 
-  filterItems(filter) {
+  getProductQuantity(product) {
+    const found = this.searchOneItemByProduct(product);
+    return found.quantity;
+  }
+
+  private filterItems(filter) {
     return this.items.filter(filter);
   }
 
-  searchOneItemByProduct(product) {
+  private changeQty(product: Product, diff: number) {
+    const foundItem = this.searchOneItemByProduct(product);
+    return foundItem.quantity += diff;
+  }
+
+  private searchItemsByProduct(product) {
+    return this.filterItems(CART_FILTER.PRODUCT_NAME_EQ(product));
+  }
+
+  private searchOneItemByProduct(product) {
     const found = this.searchItemsByProduct(product);
     if (found.length === 0) {
       throw new Error('Product not found in Cart');
@@ -57,21 +72,6 @@ export class CartService {
       throw new Error('Several products found in Cart');
     }
     return found[0];
-  }
-
-  isProductInCart(product: Product) {
-    const found = this.searchItemsByProduct(product);
-    return found.length > 0;
-  }
-
-  changeQty(product: Product, diff: number) {
-    const foundItem = this.searchOneItemByProduct(product);
-    return foundItem.quantity += diff;
-  }
-
-  getProductQuantity(product) {
-    const found = this.searchOneItemByProduct(product);
-    return found.quantity;
   }
 
 }
