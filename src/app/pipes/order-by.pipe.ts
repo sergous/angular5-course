@@ -1,11 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { CartItem, CartField } from '../models/cart-item.model';
-
-const CART_FIELD = {
-  PRICE: 'price',
-  QUANTITY: 'quantity',
-  NAME: 'name',
-}
+import { CartItem, CartField, CART_FIELD } from '../models/cart-item.model';
 
 @Pipe({
   name: 'orderBy'

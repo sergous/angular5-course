@@ -1,6 +1,11 @@
 <div *ngIf="!cartService.isEmpty">
   <h1>Cart</h1>
-  <app-cart-item *ngFor="let item of cartService.getItems()" [item]="item"></app-cart-item>
+  Sort by:
+  <select [(ngModel)]='sortField'>
+      <option *ngFor="let s of sortFields" [ngValue]='s'>{{s}}</option>
+  </select>
+  Ascending? <input type="checkbox" [(ngModel)]="isAsc" /><br />
+  <app-cart-item *ngFor="let item of cartService.getItems(sortField, isAsc)" [item]="item"></app-cart-item>
   <h3>Total products: {{cartService.totalNumber}}</h3>
   <h3>Total price: {{cartService.totalPrice | currency}}</h3>
   <button (click)="handleEmptyCart()">Empty Cart</button>
