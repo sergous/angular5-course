@@ -1,6 +1,7 @@
 <div *ngIf="!cartService.isEmpty">
   <h1>Cart</h1>
+  <app-cart-item *ngFor="let item of cartService.getItems()" [item]="item"></app-cart-item>
   <h3>Total products: {{cartService.totalNumber}}</h3>
   <h3>Total price: {{cartService.totalPrice | currency}}</h3>
-  <app-cart-item *ngFor="let item of cartService.getItems()" [item]="item"></app-cart-item>
+  <button (click)="handleEmptyCart()">Empty Cart</button>
 </div>

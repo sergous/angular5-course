@@ -9,4 +9,8 @@ import { CartService } from '../../../services/cart.service';
 export class CartListComponent {
 
   constructor(public cartService: CartService) {}
+
+  handleEmptyCart() {
+    this.cartService.emptyCart();
+  }
 }

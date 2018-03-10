@@ -33,6 +33,10 @@ export class CartService {
     return this.items;
   }
 
+  emptyCart() {
+    this.items = [];
+  }
+
   get isEmpty() {
     return this.totalNumber === 0;
   }
