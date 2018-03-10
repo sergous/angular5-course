@@ -37,3 +37,17 @@ Additional custom functionality:
 ### Task 3, item 7
 
 Click on Version to zoom font size to 150%.
+
+### Task 4, item 1
+
+1. Use currency pipe for price in product list and cart list.
+3. Use date with format for cart list item updatedAt field.
+3. Use uppercase for category in product list and cart list.
+
+### Task 4, item 2
+
+Use async pipe for cart list.
+
+### Task 4, item 3
+
+Use orderBy pipe for cart list.
