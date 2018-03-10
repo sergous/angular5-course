@@ -24,9 +24,10 @@ export class CartService {
     console.log('Removed from Cart');
   }
 
-  setProductQuantity(product, quantity: number) {
+  setProductQuantity(product: Product, quantity: number) {
     const foundItem = this.searchOneItemByProduct(product);
     foundItem.quantity = quantity;
+    foundItem.updatedAt = Date.now();
   }
 
   getItems() {
@@ -65,6 +66,7 @@ export class CartService {
 
   private changeQty(product: Product, diff: number) {
     const foundItem = this.searchOneItemByProduct(product);
+    foundItem.updatedAt = Date.now();
     return foundItem.quantity += diff;
   }
 

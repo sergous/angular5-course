@@ -3,4 +3,5 @@
 <p>{{product.category}}</p>
 <p>{{product.price | currency}}</p>
 <p>Quantity: <input type="number" (change)="handleChangeQuantity()" [(ngModel)]="quantity" /></p>
+<p>Updated: {{item.updatedAt | date:'dd-mm-yyyy HH:mm:ss'}}</p>
 <button (click)="handleRemove(item)">Remove from Cart</button>
