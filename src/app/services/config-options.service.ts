@@ -5,10 +5,7 @@ import { LocalStorageService } from './local-storage.service';
 
 @Injectable()
 export class ConfigOptionsService {
-
-  constructor(
-    @Inject(forwardRef(() => LocalStorageService)) public localStorageService: LocalStorageService
-  ) { }
+  constructor(public localStorageService: LocalStorageService) {}
 
   setConfig(config: ConfigOptions) {
     try {
@@ -27,5 +24,4 @@ export class ConfigOptionsService {
       throw reason;
     }
   }
-
 }
