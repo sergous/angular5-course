@@ -1,11 +1,16 @@
 import { Injectable } from '@angular/core';
-import { CartItem } from '../models/cart-item.model';
+import { CartItem, CartField } from '../models/cart-item.model';
 import { Product } from '../models/product.model';
 import { CART_FILTER } from '../filters';
+import { OrderByPipe } from '../pipes/order-by.pipe';
 
 @Injectable()
 export class CartService {
   items: CartItem[] = [];
+
+  constructor(
+    public orderByPipe: OrderByPipe
+  ) {}
 
   addProduct(product: Product, quantity: number = 1) {
     if (this.isProductInCart(product)) {
@@ -24,8 +29,18 @@ export class CartService {
     console.log('Removed from Cart');
   }
 
-  getItems() {
-    return this.items;
+  setProductQuantity(product: Product, quantity: number) {
+    const foundItem = this.searchOneItemByProduct(product);
+    foundItem.quantity = quantity;
+    foundItem.updatedAt = Date.now();
+  }
+
+  getItems(field: CartField = 'name', isAsc = false) {
+    return this.orderByPipe.transform(this.items, field, isAsc);
+  }
+
+  emptyCart() {
+    this.items = [];
   }
 
   get isEmpty() {
@@ -56,6 +71,7 @@ export class CartService {
 
   private changeQty(product: Product, diff: number) {
     const foundItem = this.searchOneItemByProduct(product);
+    foundItem.updatedAt = Date.now();
     return foundItem.quantity += diff;
   }
 

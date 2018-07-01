@@ -33,3 +33,21 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 Additional custom functionality:
 1. ProductItem have 'In cart: #' with current quantity of this product in Cart if any.
 2. ProductItem have input box with quantity to add to Cart, by default value is 1.
+
+### Task 3, item 7
+
+Click on Version to zoom font size to 150%.
+
+### Task 4, item 1
+
+1. Use currency pipe for price in product list and cart list.
+3. Use date with format for cart list item updatedAt field.
+3. Use uppercase for category in product list and cart list.
+
+### Task 4, item 2
+
+Use async pipe for cart list.
+
+### Task 4, item 3
+
+Use orderBy pipe for cart list.
