@@ -9,7 +9,7 @@ import { CartModule } from './components/cart/cart.module';
 import { ProductsModule } from './components/products/products.module';
 import { LocalStorageService } from './services/local-storage.service';
 import { ConfigOptionsService } from './services/config-options.service';
-import { GeneratorFactory, BUILD_ID } from './generator.factory';
+import { GeneratorFactory, BUILD_ID } from './factories';
 import { ConstantsService } from './services/constants.service';
 import { APP_NAME, APP_VERSION } from './constants';
 import { ZoomDirective } from './directives/zoom.directive';

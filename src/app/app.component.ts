@@ -1,7 +1,7 @@
 import { Component, Inject, Optional, SkipSelf } from '@angular/core';
 import { ConstantsService } from './services/constants.service';
 import { APP_NAME, APP_VERSION } from './constants';
-import { BUILD_ID } from './generator.factory';
+import { BUILD_ID } from './factories';
 
 export const constantsService = new ConstantsService(APP_NAME, APP_VERSION);
 
