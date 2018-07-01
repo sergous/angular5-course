@@ -9,4 +9,6 @@
   <h3>Total products: {{cartService.totalNumber}}</h3>
   <h3>Total price: {{cartService.totalPrice | currency}}</h3>
   <button (click)="handleEmptyCart()">Empty Cart</button>
+  <button (click)="handleSubmit()">Submit</button>
+  <h3>{{message}}</h3>
 </div>

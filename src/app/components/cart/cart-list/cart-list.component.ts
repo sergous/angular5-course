@@ -1,13 +1,15 @@
-import { Component, OnInit } from '@angular/core';
-import { CartService } from '../../../services/cart.service';
-import { CartField, CART_FIELD } from '../../../models/cart-item.model';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { CartService } from '../../../services';
+import { CartField, CART_FIELD, Order } from '../../../models';
 
 @Component({
   selector: 'app-cart-list',
   templateUrl: './cart-list.component.html',
-  styleUrls: ['./cart-list.component.css']
+  styleUrls: ['./cart-list.component.css'],
 })
 export class CartListComponent {
+  @Output() submitOrder: EventEmitter<Order> = new EventEmitter();
+
   sortFields: CartField[];
 
   constructor(public cartService: CartService) {}
@@ -18,5 +20,14 @@ export class CartListComponent {
 
   handleEmptyCart() {
     this.cartService.emptyCart();
+  }
+
+  handleSubmit() {
+    const items = this.cartService.getItems();
+    const totalNumber = this.cartService.totalNumber;
+    const totalPrice = this.cartService.totalPrice;
+    const order = new Order(items, totalNumber, totalPrice);
+    this.submitOrder.emit(order);
+    this.handleEmptyCart();
   }
 }
