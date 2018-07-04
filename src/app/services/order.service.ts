@@ -15,8 +15,8 @@ export class OrderService {
   }
 
   async getOrders(): Promise<Order[]> {
-    return (
-      <Order[]>JSON.parse(this.localStorageService.getItem(ordersKey)) || []
-    );
+    // const ordersJSON = this.localStorageService.getItem(ordersKey);
+    // return ordersJSON ? <Order[]>JSON.parse(ordersJSON) : [];
+    return [];
   }
 }

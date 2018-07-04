@@ -2,6 +2,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { ProductListComponent } from '../products';
 import { CartListComponent } from '../cart';
+import { OrderListComponent } from '../orders';
 
 export const routes: Routes = [
   {
@@ -16,10 +17,10 @@ export const routes: Routes = [
     path: 'cart',
     component: CartListComponent,
   },
-  // {
-  //   path: 'orders',
-  //   component: OrdersModule,
-  // },
+  {
+    path: 'orders',
+    component: OrderListComponent,
+  },
   // {
   //   path: '*',
   //   component: PathNotFoundComponent,
