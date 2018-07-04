@@ -12,3 +12,6 @@
   <button (click)="handleSubmit()">Submit</button>
   <h3>{{message}}</h3>
 </div>
+<div *ngIf="cartService.isEmpty">
+  Cart is empty, please <a href="" routerLink='/shop'>add some products</a>
+</div>

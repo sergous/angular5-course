@@ -16,11 +16,11 @@ import { AppConfigProvider } from './app.config';
 import { APP_NAME, APP_VERSION } from './constants';
 import { ZoomDirective } from './directives/zoom.directive';
 import { OrderByPipe } from './pipes/order-by.pipe';
-import { AppRoutesModule } from './app-routing.module';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [AppComponent, ZoomDirective, OrderByPipe, NavComponent],
-  imports: [BrowserModule, CartModule, ProductsModule, AppRoutesModule],
+  imports: [BrowserModule, CartModule, ProductsModule, AppRoutingModule],
   providers: [
     ProductsService,
     CartService,
