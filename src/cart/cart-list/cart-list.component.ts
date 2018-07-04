@@ -1,5 +1,5 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { CartService } from '../../app/services';
+import { CartService, OrderService } from '../../app/services';
 import { CartField, CART_FIELD, Order } from '../../app/models';
 
 @Component({
@@ -8,11 +8,13 @@ import { CartField, CART_FIELD, Order } from '../../app/models';
   styleUrls: ['./cart-list.component.css'],
 })
 export class CartListComponent {
-  @Output() submitOrder: EventEmitter<Order> = new EventEmitter();
-
+  message: string;
   sortFields: CartField[];
 
-  constructor(public cartService: CartService) {}
+  constructor(
+    public cartService: CartService,
+    private orderService: OrderService
+  ) {}
 
   ngOnInit() {
     this.sortFields = Object.keys(CART_FIELD).map(key => CART_FIELD[key]);
@@ -27,7 +29,12 @@ export class CartListComponent {
     const totalNumber = this.cartService.totalNumber;
     const totalPrice = this.cartService.totalPrice;
     const order = new Order(items, totalNumber, totalPrice);
-    this.submitOrder.emit(order);
+    try {
+      this.orderService.addOrder(order);
+      this.message = 'Order added';
+    } catch (reason) {
+      this.message = reason;
+    }
     this.handleEmptyCart();
   }
 }
