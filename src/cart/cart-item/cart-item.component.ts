@@ -1,12 +1,11 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { CartService } from '../../../services/cart.service';
-import { CartItem } from '../../../models/cart-item.model';
-import { Product } from '../../../models/product.model';
+import { CartService } from '../../app/services';
+import { CartItem, Product } from '../../app/models';
 
 @Component({
   selector: 'app-cart-item',
   templateUrl: './cart-item.component.html',
-  styleUrls: ['./cart-item.component.css']
+  styleUrls: ['./cart-item.component.css'],
 })
 export class CartItemComponent implements OnInit {
   @Input() item: CartItem;
@@ -28,5 +27,4 @@ export class CartItemComponent implements OnInit {
   handleChangeQuantity() {
     this.cartService.setProductQuantity(this.product, this.quantity);
   }
-
 }

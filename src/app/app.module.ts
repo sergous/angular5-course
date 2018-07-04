@@ -9,8 +9,8 @@ import {
   LocalStorageService,
   OrderService,
 } from './services';
-import { CartModule } from './components/cart/cart.module';
-import { ProductsModule } from './components/products/products.module';
+import { CartModule } from '../cart/cart.module';
+import { ProductsModule } from '../products/products.module';
 import { GeneratorFactory, BUILD_ID } from './factories';
 import { AppConfigProvider } from './app.config';
 import { APP_NAME, APP_VERSION } from './constants';

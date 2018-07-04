@@ -3,21 +3,12 @@ import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { CartItemComponent } from './cart-item/cart-item.component';
 import { CartListComponent } from './cart-list/cart-list.component';
-import { CartService } from '../../services/cart.service';
+import { CartService } from '../app/services';
 
 @NgModule({
-  imports: [
-    FormsModule,
-    CommonModule
-  ],
-  declarations: [
-    CartListComponent,
-    CartItemComponent
-  ],
+  imports: [FormsModule, CommonModule],
+  declarations: [CartListComponent, CartItemComponent],
   providers: [CartService],
-  exports: [
-    CartListComponent,
-    CartItemComponent
-  ],
+  exports: [CartListComponent, CartItemComponent],
 })
-export class CartModule { }
+export class CartModule {}
