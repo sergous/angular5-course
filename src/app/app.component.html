@@ -2,5 +2,6 @@
 <h3 *ngIf="message" class="message">{{message}}</h3>
 <small appZoom='150%'>Version: {{config.version}} Build: {{buildId}}</small>
 <h2>Product List</h2>
+<app-nav></app-nav>
 <app-product-list></app-product-list>
 <app-cart-list (submitOrder)="onSubmitOrder($event)"><app-cart-list>

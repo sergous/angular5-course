@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { NavComponent } from './components';
 import { AppComponent } from './app.component';
 import {
   ProductsService,
@@ -18,7 +18,7 @@ import { ZoomDirective } from './directives/zoom.directive';
 import { OrderByPipe } from './pipes/order-by.pipe';
 
 @NgModule({
-  declarations: [AppComponent, ZoomDirective, OrderByPipe],
+  declarations: [AppComponent, ZoomDirective, OrderByPipe, NavComponent],
   imports: [BrowserModule, CartModule, ProductsModule],
   providers: [
     ProductsService,
