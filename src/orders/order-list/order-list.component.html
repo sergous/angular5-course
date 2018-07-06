@@ -1,6 +1,2 @@
 <h1>Orders</h1>
-<ul>
-<!-- <li *ngFor="let order of orderService.getOrders() | async">
-  {{order}}
-</li> -->
-</ul>
+<app-order-item *ngFor="let order of orders | async" [order]="order"></app-order-item>
