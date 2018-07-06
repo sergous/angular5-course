@@ -1,4 +1,4 @@
-<h2>{{product.name}}</h2>
+<h2>{{product.name}} <span><button (click)="handleEdit(product)">Edit</button></span></h2>
 <p>{{product.description}}</p>
 <p>{{product.category | uppercase}}</p>
 <p>{{product.price | currency}}</p>

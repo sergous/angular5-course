@@ -16,7 +16,7 @@ import { GeneratorFactory, BUILD_ID } from './factories';
 import { AppConfigProvider } from './app.config';
 import { APP_NAME, APP_VERSION } from './constants';
 import { ZoomDirective } from './directives/zoom.directive';
-import { OrderByPipe } from './pipes/order-by.pipe';
+import { OrderByPipe } from './pipes';
 import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({

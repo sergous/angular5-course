@@ -1,0 +1,11 @@
+<form *ngIf="product" name="productForm" id="product-form" #form="ngForm" (submit)="handleSubmit(product)">
+  <input type="text" name="name" placeholder="Product Name" required [(ngModel)]="product.name"><br/>
+  <textarea name="description" placeholder="Product Description" [(ngModel)]="product.description"></textarea><br/>
+  <input type="number" name="price" placeholder="Product Price" [(ngModel)]="product.price"><br/>
+  <select [(ngModel)]="product.category" name="category">
+    <option *ngFor="let category of categories | enumToArray" [ngValue]="category">{{category}}</option>
+  </select><br/>
+  <input type="checkbox" name="is-availible" [(ngModel)]="product.isAvailible"> Availible?<br/>
+  <button (click)="handleBack()">Back</button>
+  <button type="submit" form="product-form" [disabled]="form.invalid">Save</button>
+</form>
