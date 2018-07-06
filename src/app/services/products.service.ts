@@ -5,10 +5,12 @@ import { products } from '../mocks';
 
 @Injectable()
 export class ProductsService {
+  newId: number;
   products = <Product[]>products;
   constructor() {}
 
   async getProducts(): Promise<Product[]> {
+    this.updateNewId();
     return this.products;
   }
 
@@ -19,6 +21,7 @@ export class ProductsService {
   }
 
   async addProduct(product: Product): Promise<void> {
+    product.id = this.newId++;
     this.products.push(product);
   }
 
@@ -27,5 +30,12 @@ export class ProductsService {
     if (idx > -1) {
       this.products.splice(idx, 1, product);
     }
+  }
+
+  private updateNewId() {
+    this.newId = <number>this.products.reduce(
+      (acc: number, p: Product) => (p.id > acc ? p.id : acc),
+      0
+    );
   }
 }

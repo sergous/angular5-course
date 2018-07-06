@@ -19,7 +19,7 @@ export class ProductFormComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.product = new Product('', '', 0, null, false);
+    this.product = new Product(null, '', 0, null, false);
 
     this.route.paramMap
       .pipe(
@@ -37,7 +37,12 @@ export class ProductFormComponent implements OnInit {
     this.router.navigate(['/shop']);
   }
 
-  handleSubmit(product: Product) {
-    this.productsService.updateProduct(product).then(() => this.handleBack());
+  handleSubmit() {
+    const product = { ...this.product };
+    if (product.id) {
+      this.productsService.updateProduct(product).then(() => this.handleBack());
+    } else {
+      this.productsService.addProduct(product).then(() => this.handleBack());
+    }
   }
 }
