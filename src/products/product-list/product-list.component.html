@@ -1,1 +1,4 @@
-<app-product-item *ngFor="let product of products | async" [product]="product"></app-product-item>
+<div>
+  <a routerLink='/products/add'>Add Product</a>
+  <app-product-item *ngFor="let product of products | async" [product]="product"></app-product-item>
+</div>

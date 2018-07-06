@@ -3,6 +3,8 @@ import { Product } from '../../app/models/product.model';
 import { ProductCategory } from '../../app/constants/product-category.enum';
 import { ProductsService } from '../../app/services';
 
+import { ProductListComponent, ProductFormComponent } from '.';
+
 @Component({
   selector: 'app-product-list',
   templateUrl: './product-list.component.html',
