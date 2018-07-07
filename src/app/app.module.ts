@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { NavComponent } from './components';
+import { NavComponent, LoginComponent } from './components';
 import { AppComponent } from './app.component';
 import {
   ProductsService,
@@ -8,7 +8,9 @@ import {
   ConfigOptionsService,
   LocalStorageService,
   OrderService,
+  AuthService,
 } from './services';
+import { AuthGuard } from './guards';
 import { CartModule } from '../cart/cart.module';
 import { ProductsModule } from '../products/products.module';
 import { OrdersModule } from '../orders/orders.module';
@@ -20,7 +22,13 @@ import { OrderByPipe } from './pipes';
 import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
-  declarations: [AppComponent, ZoomDirective, OrderByPipe, NavComponent],
+  declarations: [
+    AppComponent,
+    ZoomDirective,
+    OrderByPipe,
+    NavComponent,
+    LoginComponent,
+  ],
   imports: [
     BrowserModule,
     CartModule,
@@ -35,6 +43,8 @@ import { AppRoutingModule } from './app-routing.module';
     LocalStorageService,
     ConfigOptionsService,
     OrderByPipe,
+    AuthService,
+    AuthGuard,
     AppConfigProvider,
     { provide: BUILD_ID, useFactory: GeneratorFactory(14) },
   ],

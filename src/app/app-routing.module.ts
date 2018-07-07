@@ -2,6 +2,8 @@ import { Routes, RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { CartListComponent } from '../cart';
 import { OrderListComponent } from '../orders';
+import { LoginComponent } from './components';
+import { AuthGuard } from './guards';
 
 export const routes: Routes = [
   {
@@ -14,7 +16,12 @@ export const routes: Routes = [
   },
   {
     path: 'orders',
+    canActivate: [AuthGuard],
     component: OrderListComponent,
+  },
+  {
+    path: 'login',
+    component: LoginComponent,
   },
   // {
   //   path: '*',
