@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Product } from '../../app/models/product.model';
 import { ProductCategory } from '../../app/constants/product-category.enum';
-import { ProductsService } from '../../app/services';
+import { ProductsService, AuthService } from '../../app/services';
 
 import { ProductListComponent, ProductFormComponent } from '.';
 
@@ -13,7 +13,10 @@ import { ProductListComponent, ProductFormComponent } from '.';
 export class ProductListComponent implements OnInit {
   products: Promise<Product[]>;
 
-  constructor(public productsService: ProductsService) {}
+  constructor(
+    public productsService: ProductsService,
+    public authService: AuthService
+  ) {}
 
   ngOnInit() {
     this.products = this.productsService.getProducts();

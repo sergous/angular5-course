@@ -1,4 +1,4 @@
 <div>
-  <a routerLink='/products/add'>Add Product</a>
+  <a routerLink='/products/add' *ngIf="authService.isLoggedIn">Add Product</a>
   <app-product-item *ngFor="let product of products | async" [product]="product"></app-product-item>
 </div>
