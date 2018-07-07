@@ -5,6 +5,7 @@ import {
   ProductItemComponent,
   ProductFormComponent,
 } from '.';
+import { AuthGuard } from '../app/guards';
 
 const routes: Routes = [
   {
@@ -13,10 +14,12 @@ const routes: Routes = [
   },
   {
     path: 'products/add',
+    canActivate: [AuthGuard],
     component: ProductFormComponent,
   },
   {
     path: 'products/:productID',
+    canActivate: [AuthGuard],
     component: ProductFormComponent,
   },
 ];
