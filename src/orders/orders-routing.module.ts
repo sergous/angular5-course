@@ -5,6 +5,7 @@ import { OrderListComponent, OrderItemComponent } from '.';
 const routes: Routes = [
   {
     path: 'orders',
+    // TODO: lazy load - replace path to ''
     // path: '',
     component: OrderListComponent,
   },

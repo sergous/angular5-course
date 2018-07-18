@@ -37,6 +37,7 @@ import { OrdersModule } from '../orders';
     CartModule,
     ProductsModule,
     AppRoutingModule,
+    // TODO: lazy load - disable OrdersModule module
     OrdersModule,
   ],
   providers: [

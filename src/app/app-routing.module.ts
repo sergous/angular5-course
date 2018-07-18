@@ -14,11 +14,7 @@ export const routes: Routes = [
     path: 'cart',
     component: CartListComponent,
   },
-  {
-    path: 'orders',
-    canActivate: [AuthGuard],
-    component: OrderListComponent,
-  },
+  // TODO: lazy load - add orders route:
   // {
   //   path: 'orders',
   //   canActivate: [AuthGuard],
