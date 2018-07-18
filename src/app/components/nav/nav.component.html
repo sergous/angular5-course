@@ -1,8 +1,8 @@
 <nav>
 	<ul class="unstyled">
-		<li><a routerLink='/shop' routerLinkActive='active'>Shop</a></li>
+		<li><a routerLink='/products' routerLinkActive='active'>Shop</a></li>
 		<li><a routerLink='/cart' routerLinkActive='active'>Cart (<app-cart-number></app-cart-number>)</a></li>
-		<li><a routerLink='/orders' routerLinkActive='active' *ngIf="authService.isLoggedIn">Orders</a></li>
+		<li [class.disabled]="!authService.isLoggedIn"><a routerLink='/orders' routerLinkActive='active'>Orders</a></li>
 		<li><a routerLink='/login' routerLinkActive='active'>Admin Login</a></li>
 	</ul>
 </nav>
